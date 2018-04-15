@@ -48,14 +48,14 @@ class FletteHTMLExporter(HTMLExporter):
         return MarkdownWithMath(renderer=renderer).render(source)
 
 @click.command()
-@click.argument("configfile", default=".",
-                help="path to a notebook directory or a config file")
+@click.argument("configfile", default="")
 def cli(configfile):
     # default config
     with open(resource("fletteconf-default.yaml")) as f:
         config = yaml.load(f)
 
     # load config file
+    configfile = os.path.abspath(configfile)
     if os.path.isdir(configfile):
         configfile = os.path.join(configfile, "fletteconf.yaml")
 
@@ -78,18 +78,19 @@ def cli(configfile):
     html_exporter.template_file = "basic"
 
     # directories
-    notebookdir = os.path.join(os.path.dirname(configfile), config["source"])
+    nbdir = os.path.join(os.path.dirname(configfile), config["source"])
     wwwdir = os.path.join(os.path.dirname(configfile), config["target"])
 
     # parse notebooks
-    notebooks = glob.glob(os.path.join(notebookdir, "*.ipynb"))
+    notebooks = glob.glob(os.path.join(nbdir, "*.ipynb"))
     if len(notebooks) == 0:
-        print("\n\033[31merror\033[0m no notebooks found")
+        print("\033[31merror\033[0m no notebooks found in {}".format(nbdir))
+        sys.exit(1)
 
     data = []
     with click.progressbar(notebooks, label="process notebooks") as bar:
         for nb_fn in bar:
-            rel_fn = os.path.splitext(os.path.relpath(nb_fn, notebookdir))[0]
+            rel_fn = os.path.splitext(os.path.relpath(nb_fn, nbdir))[0]
 
             # read notebook
             nb = nbformat.read(nb_fn, as_version=4)
@@ -117,7 +118,9 @@ def cli(configfile):
 
     # render
     for i,d in enumerate(data):
-        with open(os.path.join(wwwdir, d["htmlfile"]), "w") as f:
+        htmlfile_full = os.path.join(wwwdir, d["htmlfile"])
+        os.makedirs(os.path.dirname(htmlfile_full), exist_ok=True)
+        with open(htmlfile_full, "w") as f:
             c = tmpl.render(toc_pre=[data[j] for j in range(len(data)) if j<i],
                             toc_post=[data[j] for j in range(len(data)) if j>i],
                             footer=config["footer"], **d)

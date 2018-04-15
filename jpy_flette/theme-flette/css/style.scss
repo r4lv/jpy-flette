@@ -1,0 +1,397 @@
+/*
+                     .d888 888          888    888
+       o            d88P"  888          888    888                         o
+      d8b           888    888          888    888                        d8b
+     d888b          888888 888  .d88b.  888888 888888  .d88b.            d888b
+ "Y888888888P"      888    888 d8P  Y8b 888    888    d8P  Y8b       "Y888888888P"
+   "Y88888P"        888    888 88888888 888    888    88888888         "Y88888P"
+   d88P"Y88b        888    888 Y8b.     Y88b.  Y88b.  Y8b.             d88P"Y88b
+  dP"     "Yb       888    888  "Y8888   "Y888  "Y888  "Y8888         dP"     "Yb
+
+  jpy-flette default theme
+
+*/
+
+// fonts
+// @import "fonts/graviola/stylesheet.css";
+@import url('https://fonts.googleapis.com/css?family=Domine:400');
+
+
+// spectre
+$primary-color: #D74E40;
+$dark-color: #5D4E45;
+@import "../../node_modules/spectre.css/src/spectre";
+@import "../../node_modules/spectre.css/src/spectre-exp";
+@import "../../node_modules/spectre.css/src/spectre-icons";
+
+//jupyter
+@import "jupyter_primary_styles_slim";
+
+
+
+
+
+//                     .d888 888
+//       o            d88P"  888
+//      d8b           888    888
+//     d888b          888888 888  8888b.  888  888  .d88b.  888  888 888d888
+// "Y888888888P"      888    888     "88b 888  888 d88""88b 888  888 888P"
+//   "Y88888P"        888    888 .d888888 Y88  88P  888  888 888  888 888
+//   d88P"Y88b        888    888 888  888  Y8bd8P  Y88..88P Y88b 888 888
+//  dP"     "Yb       888    888 "Y888888   Y88P    "Y88P"   "Y88888 888
+
+
+
+// fix colours
+div.input_prompt{
+	color: #828282; // #303F9F
+}
+div.output_prompt{
+	color: $primary-color; // #D84315;
+}
+
+
+// paragraph: block + hyphens
+p{
+	
+	text-align: justify;
+
+	-ms-word-break: break-all;
+	word-break: break-all;
+
+	word-break: break-word;
+
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+
+hr{
+	// match spectrum.css .divider
+	border-bottom: none;
+	border-right: none;
+	border-left: none;
+	@extend .divider;
+	margin-top: .8rem;
+}
+
+
+
+
+//                    888                             888
+//       o            888                             888
+//      d8b           888                             888
+//     d888b          88888b.   .d88b.   8888b.   .d88888  .d88b.  888d888 .d8888b
+// "Y888888888P"      888 "88b d8P  Y8b     "88b d88" 888 d8P  Y8b 888P"   88K
+//   "Y88888P"        888  888 88888888 .d888888 888  888 88888888 888     "Y8888b.
+//   d88P"Y88b        888  888 Y8b.     888  888 Y88b 888 Y8b.     888          X88
+//  dP"     "Yb       888  888  "Y8888  "Y888888  "Y88888  "Y8888  888      88888P'
+
+
+h1, h2, h3, h4, h5, h6{
+	font-family: "Domine", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1{
+	color: $primary-color;
+}
+
+h2{
+	color: $primary-color;
+	margin-top: 2rem;
+}
+
+h3{
+	margin-top: 1rem;
+}
+
+h4{
+	margin-top: 1rem;
+}
+
+h5{
+	font-style: normal;
+	margin-top: 1rem;
+}
+
+
+h6{
+	font-weight: 300;
+	font-weight: bold;
+	font-style: normal;
+	margin-top: 1rem;
+}
+
+
+//                                           888
+//       o                                   888
+//      d8b                                  888
+//     d888b           .d8888b  .d88b.   .d88888  .d88b.
+// "Y888888888P"      d88P"    d88""88b d88" 888 d8P  Y8b
+//   "Y88888P"        888      888  888 888  888 88888888
+//   d88P"Y88b        Y88b.    Y88..88P Y88b 888 Y8b.
+//  dP"     "Yb        "Y8888P  "Y88P"   "Y88888  "Y8888
+
+@import "pygments-espresso-highlight.scss";
+
+
+code{ // inline code
+	color: #424242;
+	background: $bg-color;
+	background: darken($bg-color, 2%);
+}
+
+
+div.highlight{
+
+	// language marker
+	position: relative;
+	&:after {
+		color: $gray-color;
+		content: "";
+		font-size: $font-size-sm;
+		position: absolute;
+		right: $layout-spacing;
+		top: $unit-h;
+	}
+	&.hl-ipython:after{
+		content: "python";
+	}
+	&.highlight-with-lang:after{
+		content: attr(data-lang);
+	}
+
+	// code block styling 
+	pre{
+		// from _code.scss -> .code
+		border-radius: $border-radius;
+		color: $body-font-color;
+		position: relative;
+
+		// from _code.scss -> code
+		background: $bg-color;
+		color: inherit;
+		display: block;
+		line-height: 1.5;
+		overflow-x: auto;
+		padding: 1rem;
+		width: 100%;
+	}
+}
+
+
+
+
+.code_cell.rendered div.inner_cell{
+	// match .rendered_html
+	padding-left: .4em;
+	padding-right: .5em;
+}
+
+div.input_area {
+	// match .rendered_html div.highlight
+	border: none;
+	background: $bg-color;
+
+	> div.highlight{
+		margin: 0;
+
+		> pre{
+			padding: 1rem; // match _code.scss -> code
+		}
+	}
+}
+
+
+
+
+
+
+
+
+//                           d8888 888b    888  .d8888b.  8888888
+//       o                  d88888 8888b   888 d88P  Y88b   888
+//      d8b                d88P888 88888b  888 Y88b.        888
+//     d888b              d88P 888 888Y88b 888  "Y888b.     888
+// "Y888888888P"         d88P  888 888 Y88b888     "Y88b.   888
+//   "Y88888P"          d88P   888 888  Y88888       "888   888
+//   d88P"Y88b         d8888888888 888   Y8888 Y88b  d88P   888
+//  dP"     "Yb       d88P     888 888    Y888  "Y8888P"  8888888
+//
+// overwrite juypter notebook colours + add .ansi-ABC-fg/bg
+
+
+.ansibold {
+  font-weight: bold;
+}
+
+
+.ansiblack, .ansi-black-fg {
+  color: #000000;
+}
+.ansired, .ansi-red-fg {
+  color: #CD0004;
+}
+.ansigreen, .ansi-green-fg {
+  color: #4E771D;
+}
+.ansiyellow, .ansi-yellow-fg {
+  color: #AF5204;
+}
+.ansiblue, .ansi-blue-fg {
+  color: #1865AC;
+}
+.ansipurple, .ansi-purple-fg {
+  color: #5400AF;
+}
+.ansicyan, .ansi-cyan-fg {
+  color: #199F9C;
+}
+.ansigray, .ansi-gray-fg {
+  color: #8E8E8E;
+}
+
+
+.ansibgblack, .ansi-black-bg {
+  background-color: #313131;
+}
+.ansibgred, .ansi-red-bg {
+  background-color: #C66965;
+}
+.ansibggreen, .ansi-green-bg {
+  background-color: #92BA05;
+}
+.ansibgyellow, .ansi-yellow-bg {
+  background-color: #DCB408;
+}
+.ansibgblue, .ansi-blue-bg {
+  background-color: #1E8EF1;
+}
+.ansibgpurple, .ansi-purple-bg {
+  background-color: #3B3680;
+}
+.ansibgcyan, .ansi-cyan-bg {
+  background-color: #21E3DF;
+}
+.ansibggray, .ansi-gray-bg {
+  background-color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+//                             d8b      888          888
+//       o                     Y8P      888          888
+//      d8b                             888          888
+//     d888b          .d8888b  888  .d88888  .d88b.  88888b.   8888b.  888d888
+// "Y888888888P"      88K      888 d88" 888 d8P  Y8b 888 "88b     "88b 888P"
+//   "Y88888P"        "Y8888b. 888 888  888 88888888 888  888 .d888888 888
+//   d88P"Y88b             X88 888 Y88b 888 Y8b.     888 d88P 888  888 888
+//  dP"     "Yb        88888P' 888  "Y88888  "Y8888  88888P"  "Y888888 888
+
+$sidebar-width: 16rem;
+
+
+a.off-canvas-toggle{
+	position: fixed;
+}
+
+#sidebar.off-canvas-sidebar{
+	width: $sidebar-width;
+
+	#sidebar-title h2{
+		text-align: center;
+		color: $primary-color;
+
+		margin-top: .7em;
+		text-align: left;
+		padding-left: 1em;
+
+		position: fixed;
+
+		span{
+			color: lighten($primary-color, 6%);
+		}
+	}
+
+	#sidebar-toc{
+			bottom: 1.5rem;
+			-webkit-overflow-scrolling: touch;
+			overflow-y: auto;
+			// padding: .5rem 1.5rem;
+			position: fixed;
+			top: 3rem;
+			width: $sidebar-width;
+
+		ul.menu.menu-nav{
+
+			li.nav-item{
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: $sidebar-width - 2*0.4rem - 0.3rem;
+
+				&.indent-1{
+					font-weight: bold;
+				}
+				&.indent-2{
+					padding-left: 1rem;
+				}
+				&.indent-3{
+					padding-left: 2.5rem;
+				}
+				&.indent-4{
+					padding-left: 4rem;
+				}
+				&.indent-5{
+					display: none;
+				}
+				&.indent-6{
+					display: none;
+				}
+			}
+
+
+			&#menu-post, &#menu-pre{
+				li{
+					font-weight: bold;
+				}
+			}
+
+		}
+	}
+}// #sidebar.off-canvas-sidebar
+
+
+#content{
+	// sidebar
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	width: calc(100vw - $sidebar-width);
+
+	// style
+	padding-left: 0;
+	padding-right: 2rem;
+	max-width: 910px; // 900px is too small (dashed line on Error)
+	margin: 0 auto;
+}
+
+
+
+// change a.off-canvas-toggle behaviour
+@media (max-width: 540px) { // wrap point matches jupyter nb
+	.off-canvas div.off-canvas-content{
+		padding-top: 2em;
+	}
+
+	.off-canvas a.off-canvas-toggle{
+		position: absolute;
+	}
+
+}

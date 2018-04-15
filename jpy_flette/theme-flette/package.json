@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "scss": "^0.2.4",
+    "spectre.css": "^0.5.1"
+  },
+  "name": "jpy-flette.theme.flette",
+  "version": "0.1.0",
+  "description": "*flette* theme for jpy-flette",
+  "author": "r4lv",
+  "license": "MIT",
+}

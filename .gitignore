@@ -22,3 +22,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# testing
+venv*
+test*.py

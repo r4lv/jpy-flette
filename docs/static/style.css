@@ -5094,12 +5094,6 @@ a.off-canvas-toggle {
     #sidebar.off-canvas-sidebar #sidebar-toc ul.menu.menu-nav#menu-post li, #sidebar.off-canvas-sidebar #sidebar-toc ul.menu.menu-nav#menu-pre li {
       font-weight: bold; }
 
-@media (max-width: 540px) {
-  .off-canvas div.off-canvas-content {
-    padding-top: 2em; }
-
-  .off-canvas a.off-canvas-toggle {
-    position: absolute; } }
 #content {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -5119,5 +5113,15 @@ footer {
     border-bottom: 1px solid #ede9e7; }
     footer a:hover {
       text-decoration: none; }
+
+@media (max-width: 540px) {
+  .off-canvas div.off-canvas-content {
+    padding-top: 2em; }
+
+  #content {
+    padding-right: 0; }
+
+  .off-canvas a.off-canvas-toggle {
+    position: absolute; } }
 
 /*# sourceMappingURL=style.css.map */

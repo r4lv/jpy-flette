@@ -82,7 +82,7 @@ def cli(configfile):
     wwwdir = os.path.join(os.path.dirname(configfile), config["target"])
 
     # parse notebooks
-    notebooks = glob.glob(os.path.join(nbdir, "*.ipynb"))
+    notebooks = sorted(glob.glob(os.path.join(nbdir, "*.ipynb")))
     if len(notebooks) == 0:
         print("\033[31merror\033[0m no notebooks found in {}".format(nbdir))
         sys.exit(1)

@@ -16,7 +16,7 @@ Make sure you have at least python 3.5. Download or clone the `repository <https
 Usage
 -----
 
-> Make sure you check the `documentation <https://r4lv.github.io/jpy-flette>`_, which is actually built using *jpy-flette* itself!
+    Make sure you check the `documentation <https://r4lv.github.io/jpy-flette>`_, which is actually built using *jpy-flette* itself!
 
 *jpy-flette* transforms a directory full of ``.ipynb`` jupyter notebooks into a website with multiple pages. Let's assume the following directory structure:
 

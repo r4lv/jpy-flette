@@ -6,7 +6,7 @@ jpy-flette
 Installation
 ------------
 
-Make sure you have at least python 3.5. Download or clone `the repository <https://github.com/r4lv/jpy-flette>`_, then run
+Make sure you have at least python 3.5. Download or clone the `repository <https://github.com/r4lv/jpy-flette>`_, then run
 
 .. code:: bash
 
@@ -51,4 +51,4 @@ you would obtain
 
 ``~/my/directory/docs`` is then ready to be published!
 
-*jpy-flette* can be configured using ``fletteconf.yaml`` files for *theming*, titles/footers and more. Check the `documentation <https://r4lv.github.io/jpy-flette>`_!
+*jpy-flette* can be configured using ``fletteconf.yaml`` files for *theming*, titles/footers and more. Refer the `documentation <https://r4lv.github.io/jpy-flette>`_ for more.

@@ -34,7 +34,7 @@ class FletteIPythonRenderer(IPythonRenderer):
         formatter = HtmlFormatter()
 
         # fix
-        prettylang_map = {"idl": "IDL"}
+        prettylang_map = {"idl": "IDL", "text": ""}
         prettylang = prettylang_map.get(lang, lang)
         hl = highlight(code, lexer, formatter)
         hl = hl.replace('"><pre>', ' highlight-with-lang" data-lang="{}"><pre>'

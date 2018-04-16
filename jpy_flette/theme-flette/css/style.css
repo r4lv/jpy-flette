@@ -1,3 +1,16 @@
+/*
+                     .d888 888          888    888
+       o            d88P"  888          888    888                         o
+      d8b           888    888          888    888                        d8b
+     d888b          888888 888  .d88b.  888888 888888  .d88b.            d888b
+ "Y888888888P"      888    888 d8P  Y8b 888    888    d8P  Y8b       "Y888888888P"
+   "Y88888P"        888    888 88888888 888    888    88888888         "Y88888P"
+   d88P"Y88b        888    888 Y8b.     Y88b.  Y88b.  Y8b.             d88P"Y88b
+  dP"     "Yb       888    888  "Y8888   "Y888  "Y888  "Y8888         dP"     "Yb
+
+  jpy-flette default theme
+
+*/
 @import url("https://fonts.googleapis.com/css?family=Domine:400");
 /*! Spectre.css v0.5.1 | MIT License | github.com/picturepan2/spectre */
 /* Manually forked from Normalize.css */
@@ -4196,208 +4209,6 @@ div.input_area > div.highlight > pre {
   background-color: transparent; }
 
 /*
-                    .d8888b.  888b     d888
-      o            d88P  Y88b 8888b   d8888
-     d8b           888    888 88888b.d88888
-    d888b          888        888Y88888P888
-"Y888888888P"      888        888 Y888P 888
-  "Y88888P"        888    888 888  Y8P  888
-  d88P"Y88b        Y88b  d88P 888   "   888
- dP"     "Yb        "Y8888P"  888       888
-*/
-/* The following gets added to the <head> if it is detected that the user has a
- * monospace font with inconsistent normal/bold/italic height.  See
- * notebookmain.js.  Such fonts will have keywords vertically offset with
- * respect to the rest of the text.  The user should select a better font.
- * See: https://github.com/ipython/ipython/issues/1503
- *
- * .CodeMirror span {
- *      vertical-align: bottom;
- * }
- */
-.CodeMirror {
-  line-height: 1.21429em;
-  /* Changed from 1em to our global default */
-  font-size: 14px;
-  height: auto;
-  /* Changed to auto to autogrow */
-  background: none;
-  /* Changed from white to allow our bg to show through */ }
-
-.CodeMirror-scroll {
-  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
-  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
-  overflow-y: hidden;
-  overflow-x: auto; }
-
-.CodeMirror-lines {
-  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
-  /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em; }
-
-.CodeMirror-linenumber {
-  padding: 0 8px 0 4px; }
-
-.CodeMirror-gutters {
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px; }
-
-.CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
-  border: 0;
-  border-radius: 0; }
-
-/*
-
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
-Adapted from GitHub theme
-
-*/
-.highlight-base {
-  color: #000; }
-
-.highlight-variable {
-  color: #000; }
-
-.highlight-variable-2 {
-  color: #1a1a1a; }
-
-.highlight-variable-3 {
-  color: #333333; }
-
-.highlight-string {
-  color: #BA2121; }
-
-.highlight-comment {
-  color: #408080;
-  font-style: italic; }
-
-.highlight-number {
-  color: #080; }
-
-.highlight-atom {
-  color: #88F; }
-
-.highlight-keyword {
-  color: #008000;
-  font-weight: bold; }
-
-.highlight-builtin {
-  color: #008000; }
-
-.highlight-error {
-  color: #f00; }
-
-.highlight-operator {
-  color: #AA22FF;
-  font-weight: bold; }
-
-.highlight-meta {
-  color: #AA22FF; }
-
-/* previously not defined, copying from default codemirror */
-.highlight-def {
-  color: #00f; }
-
-.highlight-string-2 {
-  color: #f50; }
-
-.highlight-qualifier {
-  color: #555; }
-
-.highlight-bracket {
-  color: #997; }
-
-.highlight-tag {
-  color: #170; }
-
-.highlight-attribute {
-  color: #00c; }
-
-.highlight-header {
-  color: blue; }
-
-.highlight-quote {
-  color: #090; }
-
-.highlight-link {
-  color: #00c; }
-
-/* apply the same style to codemirror */
-.cm-s-ipython span.cm-keyword {
-  color: #008000;
-  font-weight: bold; }
-
-.cm-s-ipython span.cm-atom {
-  color: #88F; }
-
-.cm-s-ipython span.cm-number {
-  color: #080; }
-
-.cm-s-ipython span.cm-def {
-  color: #00f; }
-
-.cm-s-ipython span.cm-variable {
-  color: #000; }
-
-.cm-s-ipython span.cm-operator {
-  color: #AA22FF;
-  font-weight: bold; }
-
-.cm-s-ipython span.cm-variable-2 {
-  color: #1a1a1a; }
-
-.cm-s-ipython span.cm-variable-3 {
-  color: #333333; }
-
-.cm-s-ipython span.cm-comment {
-  color: #408080;
-  font-style: italic; }
-
-.cm-s-ipython span.cm-string {
-  color: #BA2121; }
-
-.cm-s-ipython span.cm-string-2 {
-  color: #f50; }
-
-.cm-s-ipython span.cm-meta {
-  color: #AA22FF; }
-
-.cm-s-ipython span.cm-qualifier {
-  color: #555; }
-
-.cm-s-ipython span.cm-builtin {
-  color: #008000; }
-
-.cm-s-ipython span.cm-bracket {
-  color: #997; }
-
-.cm-s-ipython span.cm-tag {
-  color: #170; }
-
-.cm-s-ipython span.cm-attribute {
-  color: #00c; }
-
-.cm-s-ipython span.cm-header {
-  color: blue; }
-
-.cm-s-ipython span.cm-quote {
-  color: #090; }
-
-.cm-s-ipython span.cm-link {
-  color: #00c; }
-
-.cm-s-ipython span.cm-error {
-  color: #f00; }
-
-.cm-s-ipython span.cm-tab {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
-  background-position: right;
-  background-repeat: no-repeat; }
-
-/*
                                      888                      888
       o                              888                      888
      d8b                             888                      888
@@ -5148,7 +4959,11 @@ h6 {
 code {
   color: #424242;
   background: #faf9f8;
-  background: #f6f4f3; }
+  background: #f6f4f3;
+  word-break: break-all;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none; }
 
 div.highlight {
   position: relative; }
@@ -5279,20 +5094,30 @@ a.off-canvas-toggle {
     #sidebar.off-canvas-sidebar #sidebar-toc ul.menu.menu-nav#menu-post li, #sidebar.off-canvas-sidebar #sidebar-toc ul.menu.menu-nav#menu-pre li {
       font-weight: bold; }
 
-#content {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  width: calc(100vw - $sidebar-width);
-  padding-left: 0;
-  padding-right: 2rem;
-  max-width: 910px;
-  margin: 0 auto; }
-
 @media (max-width: 540px) {
   .off-canvas div.off-canvas-content {
     padding-top: 2em; }
 
   .off-canvas a.off-canvas-toggle {
     position: absolute; } }
+#content {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: calc(100vw - 16rem);
+  padding-left: 0;
+  padding-right: 2rem;
+  max-width: 910px;
+  margin: 0 auto; }
+
+footer {
+  margin-top: 2rem;
+  text-align: right;
+  color: #c2b4ac;
+  font-size: .6rem; }
+  footer a {
+    color: #c2b4ac;
+    border-bottom: 1px solid #ede9e7; }
+    footer a:hover {
+      text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

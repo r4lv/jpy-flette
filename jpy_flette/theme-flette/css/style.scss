@@ -375,6 +375,28 @@ a.off-canvas-toggle{
 }// #sidebar.off-canvas-sidebar
 
 
+
+// change a.off-canvas-toggle behaviour
+@media (max-width: 540px) { // wrap point matches jupyter nb
+	.off-canvas div.off-canvas-content{
+		padding-top: 2em;
+	}
+
+	.off-canvas a.off-canvas-toggle{
+		position: absolute;
+	}
+
+}
+
+//                                               888                      888
+//       o                                       888                      888
+//      d8b                                      888                      888
+//     d888b           .d8888b  .d88b.  88888b.  888888  .d88b.  88888b.  888888
+// "Y888888888P"      d88P"    d88""88b 888 "88b 888    d8P  Y8b 888 "88b 888
+//   "Y88888P"        888      888  888 888  888 888    88888888 888  888 888
+//   d88P"Y88b        Y88b.    Y88..88P 888  888 Y88b.  Y8b.     888  888 Y88b.
+//  dP"     "Yb        "Y8888P  "Y88P"  888  888  "Y888  "Y8888  888  888  "Y888
+
 #content{
 	// sidebar
 	-ms-flex: 1 1 auto;
@@ -390,14 +412,20 @@ a.off-canvas-toggle{
 
 
 
-// change a.off-canvas-toggle behaviour
-@media (max-width: 540px) { // wrap point matches jupyter nb
-	.off-canvas div.off-canvas-content{
-		padding-top: 2em;
-	}
 
-	.off-canvas a.off-canvas-toggle{
-		position: absolute;
-	}
+footer{
+	margin-top: 2rem;
+	text-align: right;
+	color: lighten($dark-color, 40%);
+	font-size: .6rem;
 
+	a{
+		color: lighten($dark-color, 40%);
+		border-bottom: 1px solid lighten($dark-color, 60%);
+
+		&:hover{
+			text-decoration: none;
+		}
+	}
 }
+

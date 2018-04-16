@@ -20,9 +20,9 @@
 // spectre
 $primary-color: #D74E40;
 $dark-color: #5D4E45;
-@import "../../node_modules/spectre.css/src/spectre";
-@import "../../node_modules/spectre.css/src/spectre-exp";
-@import "../../node_modules/spectre.css/src/spectre-icons";
+@import "../node_modules/spectre.css/src/spectre";
+@import "../node_modules/spectre.css/src/spectre-exp";
+@import "../node_modules/spectre.css/src/spectre-icons";
 
 //jupyter
 @import "jupyter_primary_styles_slim";

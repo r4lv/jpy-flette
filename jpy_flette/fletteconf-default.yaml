@@ -1,3 +1,6 @@
 source: ""
 target: "../docs"
 theme: "flette"
+title_prefix: ""
+title_suffix: ""
+title_sidebar: True

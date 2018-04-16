@@ -116,6 +116,9 @@ def cli(configfile):
                              title=toc[0]("a").html(method="html"),
                              toc=[t.outer_html(method="html") for t in toc]))
 
+    if config["title_sidebar"] == True:
+        config["title_sidebar"] = data[0]["title"]
+
     # render
     for i,d in enumerate(data):
         htmlfile_full = os.path.join(wwwdir, d["htmlfile"])

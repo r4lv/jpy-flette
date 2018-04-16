@@ -78,8 +78,8 @@ function cachePositions() {
 document.addEventListener("DOMContentLoaded", function () {
     document.removeEventListener("DOMContentLoaded", arguments.callee, false);
 
-    $navigationItems = $(".sidebar-toc ul.menu-main > li");
-    $sections = $($(".off-canvas-content h1, .off-canvas-content h2, .off-canvas-content h3, .off-canvas-content h4").get().reverse());
+    $navigationItems = $("ul#menu-main > li");
+    $sections = $($("#content h1, #content h2, #content h3, #content h4").get().reverse());
 
 
     cachePositions();

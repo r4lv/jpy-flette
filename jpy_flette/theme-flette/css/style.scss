@@ -376,18 +376,6 @@ a.off-canvas-toggle{
 
 
 
-// change a.off-canvas-toggle behaviour
-@media (max-width: 540px) { // wrap point matches jupyter nb
-	.off-canvas div.off-canvas-content{
-		padding-top: 2em;
-	}
-
-	.off-canvas a.off-canvas-toggle{
-		position: absolute;
-	}
-
-}
-
 //                                               888                      888
 //       o                                       888                      888
 //      d8b                                      888                      888
@@ -429,3 +417,19 @@ footer{
 	}
 }
 
+
+
+// change a.off-canvas-toggle behaviour
+@media (max-width: 540px) { // wrap point matches jupyter nb
+	.off-canvas div.off-canvas-content{
+		padding-top: 2em;
+	}
+	#content{
+		padding-right: 0;
+	}
+
+	.off-canvas a.off-canvas-toggle{
+		position: absolute;
+	}
+
+}

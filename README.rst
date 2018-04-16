@@ -6,11 +6,20 @@ jpy-flette
 Installation
 ------------
 
-Make sure you have at least python 3.5. Download or clone the `repository <https://github.com/r4lv/jpy-flette>`_, then run
+Install *jpy-flette* with pip:
 
 .. code:: bash
 
-    python3 setup.py install
+    pip install jpy-flette
+
+
+You could also download or clone the source code from the `repository <https://github.com/r4lv/jpy-flette>`_, then run
+
+.. code:: bash
+
+    python setup.py install
+
+
 
 
 Usage

@@ -1,4 +1,3 @@
 source: ""
 target: "../docs"
 theme: "flette"
-footer: "<span class='footer-default'>built with <i>jpy-flette</i></span>"

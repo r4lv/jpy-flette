@@ -123,7 +123,7 @@ def cli(configfile):
         with open(htmlfile_full, "w") as f:
             c = tmpl.render(toc_pre=[data[j] for j in range(len(data)) if j<i],
                             toc_post=[data[j] for j in range(len(data)) if j>i],
-                            footer=config["footer"], **d)
+                            **config, **d)
             f.write(c)
 
     # copy theme files

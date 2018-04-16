@@ -6,7 +6,7 @@ jpy-flette
 Installation
 ------------
 
-Download or clone this repository, then run
+Make sure you have at least python 3.5. Download or clone `the repository <https://github.com/r4lv/jpy-flette>`_, then run
 
 .. code:: bash
 
@@ -16,7 +16,7 @@ Download or clone this repository, then run
 Usage
 -----
 
-Make sure you check the `full documentation <google.de>`_, which is actually built using *jpy-flette* itself!
+> Make sure you check the `documentation <https://r4lv.github.io/jpy-flette>`_, which is actually built using *jpy-flette* itself!
 
 *jpy-flette* transforms a directory full of ``.ipynb`` jupyter notebooks into a website with multiple pages. Let's assume the following directory structure:
 
@@ -51,4 +51,4 @@ you would obtain
 
 ``~/my/directory/docs`` is then ready to be published!
 
-*jpy-flette* can be configured using ``fletteconf.yaml`` files for *theming*, titles/footers and more. Check the `documentation <google.de>`_!
+*jpy-flette* can be configured using ``fletteconf.yaml`` files for *theming*, titles/footers and more. Check the `documentation <https://r4lv.github.io/jpy-flette>`_!

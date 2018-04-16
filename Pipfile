@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+nbconvert = "*"
+click = "==6.*"
+"Jinja2" = "==2.*"
+pyquery = "==1.*"
+ipython = "*"
+pyyaml = "*"
+jupyter-nbextensions-configurator = "*"
+"e1839a8" = {path = ".", editable = true}
+
+[dev-packages]
+twine = "*"
+ptpython = "*"
+jupyter = "*"
+numpy = "*"
+matplotlib = "*"
+
+[requires]
+python_version = "3.6"

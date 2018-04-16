@@ -379,7 +379,7 @@ a.off-canvas-toggle{
 	// sidebar
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
-	width: calc(100vw - $sidebar-width);
+	width: calc(100vw - 16rem); // $sidebar-width
 
 	// style
 	padding-left: 0;

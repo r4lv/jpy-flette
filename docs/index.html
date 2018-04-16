@@ -60,7 +60,10 @@ MathJax.Hub.Config({
 generator which uses jupyter notebooks as input. It's fantastic for
 documenting scientific projects, documentation, or just to share your
 thoughts with the world.</p>
-<h2 id="installation">installation<a class="anchor-link" href="#installation">¶</a></h2><p>To install <em>jpy-flette</em>, download or clone the <a href="https://github.com/r4lv/jpy-flette">repository</a>, then run</p>
+<h2 id="installation">installation<a class="anchor-link" href="#installation">¶</a></h2><p>Install <em>jpy-flette</em> with pip:</p>
+<div class="highlight highlight-with-lang" data-lang="bash"><pre><span></span>pip install jpy-flette
+</pre></div>
+<p>You could also download or clone the source code from the <a href="https://github.com/r4lv/jpy-flette">repository</a>, then run</p>
 <div class="highlight highlight-with-lang" data-lang="bash"><pre><span></span>python setup.py install
 </pre></div>
 <h2 id="usage">usage<a class="anchor-link" href="#usage">¶</a></h2><p><em>jpy-flette</em> transforms a directory full of <code>.ipynb</code> jupyter notebooks
@@ -179,11 +182,13 @@ structure:</p>
 <span class="l l-Scalar l-Scalar-Plain">title_prefix</span><span class="p p-Indicator">:</span> <span class="s">""</span>
 <span class="l l-Scalar l-Scalar-Plain">title_suffix</span><span class="p p-Indicator">:</span> <span class="s">""</span>
 <span class="l l-Scalar l-Scalar-Plain">title_sidebar</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="l l-Scalar l-Scalar-Plain">inject</span><span class="p p-Indicator">:</span> <span class="s">""</span>
 </pre></div>
 <p>You can replace any, or all, of the configuration options in your custom file.</p>
 <ul>
 <li><code>source</code> (the directory with the <code>.ipynb</code> notebooks) and <code>target</code> (the directory with the <code>.html</code> files) are relative to the configuration file.</li>
 <li>If <code>title_sidebar</code> is set to <code>True</code>, the sidebar title is set based on the first header of the first page (usually your <code>00.index.ipynb</code>).</li>
+<li>The HTML code in <code>inject</code> is copied at the end of every generated HTML file (before <code>&lt;/body&gt;</code>)</li>
 </ul>
 <h3 id="themes">themes<a class="anchor-link" href="#themes">¶</a></h3><p>You can use <em>jpy-flette</em> with your own themes! Specify the <code>theme</code> to use in the <code>fletteconf.yaml</code> file. <em>jpy-flette</em>  looks inside its root directory (the directory you installed <em>jpy-flette</em> to) for a folder called <code>theme-&lt;your theme name&gt;/</code>. You can also specify a full path to your theme directory.</p>
 <h3 id="technology">technology<a class="anchor-link" href="#technology">¶</a></h3><p>If you're curious, <em>jpy-flette</em>  is built with</p>

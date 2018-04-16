@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 
 import io
 import os
@@ -9,24 +7,12 @@ from shutil import rmtree
 
 from setuptools import find_packages, setup, Command
 
-# Package meta-data.
 NAME = 'jpy_flette'
-DESCRIPTION = 'Static site generator for jupyter notebooks'
-URL = 'https://github.com/r4lv/jpy-flette'
-EMAIL = 'r4lv@peaxels.com'
-AUTHOR = 'Ralf Farkas'
-REQUIRES_PYTHON = '>=3.2.0'
-VERSION = None
-
-# What packages are required for this module to be executed?
+REQUIRES_PYTHON = '>=3.5.0'
 REQUIRED = [
     'nbconvert', "click", "jinja2", "pyquery", "ipython", "pyyaml"
 ]
 
-# The rest you shouldn't have to touch too much :)
-# ------------------------------------------------
-# Except, perhaps the License and Trove Classifiers!
-# If you do change the License, remember to change the Trove Classifier for that!
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -37,11 +23,9 @@ with io.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 # Load the package's __version__.py module as a dictionary.
 about = {}
-if not VERSION:
-    with open(os.path.join(here, NAME, '__version__.py')) as f:
-        exec(f.read(), about)
-else:
-    about['__version__'] = VERSION
+with open(os.path.join(here, NAME, '__version__.py')) as f:
+    exec(f.read(), about)
+
 
 
 class UploadCommand(Command):
@@ -85,12 +69,12 @@ class UploadCommand(Command):
 setup(
     name=NAME,
     version=about['__version__'],
-    description=DESCRIPTION,
+    description=about['__description__'],
     long_description=long_description,
-    author=AUTHOR,
-    author_email=EMAIL,
+    author=about['__author__'],
+    author_email=about['__author_email__'],
     python_requires=REQUIRES_PYTHON,
-    url=URL,
+    url=about['__url__'],
     packages=find_packages(exclude=('tests',)),
     # If your package is a single module, use this instead of 'packages':
     # py_modules=[NAME],
@@ -100,7 +84,7 @@ setup(
     },
     install_requires=REQUIRED,
     include_package_data=True,
-    license='MIT',
+    license=about['__license__'],
     classifiers=[
         # Trove classifiers
         # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers

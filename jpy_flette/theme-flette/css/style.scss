@@ -141,6 +141,12 @@ code{ // inline code
 	color: #424242;
 	background: $bg-color;
 	background: darken($bg-color, 2%);
+
+	// line break (inside p!)
+	word-break: break-all;
+	-webkit-hyphens:none;
+	-moz-hyphens: none;
+	hyphens: none;
 }
 
 

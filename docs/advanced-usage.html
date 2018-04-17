@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>advanced usage of jpy-flette</title>
+<link rel="stylesheet" href="static/style.css">
+<script src="https://cdn.jsdelivr.net/npm/cash-dom@1.3.5/dist/cash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
+
+</head>
+<body class="off-canvas off-canvas-sidebar-show">
+
+    <a class="off-canvas-toggle btn btn-primary btn-action" href="#sidebar">
+        <i class="icon icon-menu"></i>
+    </a>
+
+    <div id="sidebar" class="off-canvas-sidebar">
+        <div id="sidebar-title">
+            <h2>jpy-flette</h2>
+        </div>
+
+        <div id="sidebar-toc">
+            
+            <ul class="menu menu-nav nav" id="menu-pre">
+            <li class="nav-item"><a href="index.html">jpy-flette</a></li>
+            </ul>
+            
+            <ul class="menu menu-nav nav" id="menu-main">
+            <li class="nav-item indent-1"><a href="#advanced-usage-of-jpy-flette">advanced usage of jpy-flette</a></li><li class="nav-item indent-2"><a href="#configuration-file">configuration file</a></li><li class="nav-item indent-2"><a href="#themes">themes</a></li><li class="nav-item indent-2"><a href="#technology">technology</a></li>
+            </ul>
+            
+
+        </div>
+    </div>
+
+    <a class="off-canvas-overlay" href="#close"></a>
+
+    <div class="off-canvas-content" id="content">
+        <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="advanced-usage-of-jpy-flette">advanced usage of jpy-flette<a class="anchor-link" href="#advanced-usage-of-jpy-flette">¶</a></h1><p><em>jpy-flette</em> works without any configuration. Just run it in the folder of your <code>.ipynb</code> notebooks, or pass the directory as command line argument.</p>
+<h2 id="configuration-file">configuration file<a class="anchor-link" href="#configuration-file">¶</a></h2><p>If you find yourself re-typing the same command line arguments, or want something <strong>oh là là</strong>, use a configuration file: Put a <code>fletteconf.yaml</code> somewhere close to your <code>.ipynb</code> files. When <em>jpy-flette</em> runs, it looks for a configuration file in the folder you supplied (or the working directory, if you did not pass a path to <em>jpy-flette</em>). With</p>
+<div class="highlight highlight-with-lang" data-lang="bash"><pre><span></span>jpy-flette ~/my/directory/notebooks
+</pre></div>
+<p>it would find <code>~/my/directory/notebooks/fletteconf.yaml</code>, if it's there.</p>
+<p>The configuration file is written in YAML format. The default configuration is</p>
+<div class="highlight highlight-with-lang" data-lang="yaml"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span> <span class="s">""</span>
+<span class="l l-Scalar l-Scalar-Plain">target</span><span class="p p-Indicator">:</span> <span class="s">"../docs"</span>
+<span class="l l-Scalar l-Scalar-Plain">theme</span><span class="p p-Indicator">:</span> <span class="s">"flette"</span>
+<span class="l l-Scalar l-Scalar-Plain">title_prefix</span><span class="p p-Indicator">:</span> <span class="s">""</span>
+<span class="l l-Scalar l-Scalar-Plain">title_suffix</span><span class="p p-Indicator">:</span> <span class="s">""</span>
+<span class="l l-Scalar l-Scalar-Plain">title_sidebar</span><span class="p p-Indicator">:</span> <span class="s">"&lt;auto&gt;"</span>
+<span class="l l-Scalar l-Scalar-Plain">inject</span><span class="p p-Indicator">:</span> <span class="s">""</span>
+</pre></div>
+<p>You can overwrite any, or all, of the configuration options in your custom file.</p>
+<ul>
+<li><code>source</code> (the directory with the <code>.ipynb</code> notebooks) and <code>target</code> (the directory with the <code>.html</code> files) are relative to the configuration file.</li>
+<li>If <code>title_sidebar</code> is set to <code>"&lt;auto&gt;"</code>, the sidebar title is set based on the first header of the first page (usually your <code>00.index.ipynb</code>).</li>
+<li>The HTML code in <code>inject</code> is copied at the end of every generated HTML file (before <code>&lt;/body&gt;</code>)</li>
+</ul>
+<h2 id="themes">themes<a class="anchor-link" href="#themes">¶</a></h2><p>You can <strong>vroum</strong> <em>jpy-flette</em> with your own themes! Specify the <code>theme</code> to use in the <code>fletteconf.yaml</code> file. <em>jpy-flette</em>  looks inside its root directory (the directory you installed <em>jpy-flette</em> to) for a folder called <code>theme-&lt;your theme name&gt;/</code>. You can also specify a full path to your theme directory in the config.</p>
+<p>The default theme <code>theme-flette</code> is built with</p>
+<ul>
+<li><a href="https://picturepan2.github.io/spectre/">spectre.css</a> css framework</li>
+<li><a href="https://sass-lang.com/guide">SCSS</a> pre-processor</li>
+<li><a href="http://kenwheeler.github.io/cash/">cash</a> as a light replacement for jQuery</li>
+<li><a href="https://fonts.google.com/specimen/Domine">Domine</a> font</li>
+<li><a href="https://yarnpkg.com">yarn</a> package manager</li>
+</ul>
+<p>If you would like to modify the theme, install its develoment dependencies with <code>yarn install</code>.</p>
+<h2 id="technology">technology<a class="anchor-link" href="#technology">¶</a></h2><p>If you're curious, <em>jpy-flette</em> uses</p>
+<ul>
+<li><a href="https://nbformat.readthedocs.io">nbformat</a> and <a href="https://nbconvert.readthedocs.io">nbconvert</a> for jupyter notebook handling</li>
+<li><a href="http://pyquery.readthedocs.io">pyquery</a> and <a href="http://jinja.pocoo.org">jinja2</a> for parsing and building HTML</li>
+<li><a href="http://click.pocoo.org/6">click</a>, for the command line interface</li>
+<li><a href="https://github.com/yaml/pyyaml">pyyaml</a> for parsing configuration files</li>
+<li><a href="https://github.com/kennethreitz/setup.py">kennethreitz/setup.py</a> for setuptools integration</li>
+<li><a href="https://docs.pipenv.org">pipenv</a>, <a href="https://github.com/jonathanslenders/ptpython">ptpython</a> and of course <a href="http://jupyter.org">jupyter</a> for development</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+        <footer>
+            built with <a href="https://github.com/r4lv/jpy-flette">jpy-flette</a>
+        </footer>
+    </div>
+
+
+
+    <a href="https://github.com/r4lv/jpy-flette"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <script src="static/script.js"></script>
+
+</body>
+</html>

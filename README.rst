@@ -13,10 +13,12 @@ Install *jpy-flette* with pip:
     pip install jpy-flette
 
 
-You could also download or clone the source code from the `repository <https://github.com/r4lv/jpy-flette>`_, then run
+You could also download or clone the source code from the `repository <https://github.com/r4lv/jpy-flette>`_:
 
 .. code:: bash
 
+    git clone "https://github.com/r4lv/jpy-flette"
+    cd "jpy-flette"
     python setup.py install
 
 
@@ -34,7 +36,7 @@ Usage
     ~/my/directory
               └── notebooks
                   ├── 00.index.ipynb
-                  └── 01.jpy-flette-documentation.ipynb
+                  └── 01.advanced-usage.ipynb
     
 After calling
 
@@ -49,15 +51,13 @@ you would obtain
     ~/my/directory
               ├── docs
               │   ├── index.html
-              │   ├── jpy-flette-documentation.html
+              │   ├── advanced-usage.html
               │   └── static
               │       ├── style.css
               │       └── script.js
               └── notebooks
                   ├── 00.index.ipynb
-                  └── 01.jpy-flette-documentation.ipynb
+                  └── 01.advanced-usage.ipynb
 
 
 ``~/my/directory/docs`` is then ready to be published!
-
-*jpy-flette* can be configured using ``fletteconf.yaml`` files for *theming*, titles/footers and more. Refer the `documentation <https://r4lv.github.io/jpy-flette>`_ for more.
